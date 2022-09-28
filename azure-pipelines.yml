@@ -19,19 +19,19 @@ steps:
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: '$(connection)'
-    subscriptionId: '$(subscriptionID)'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: '$(resourceGroupName)'
-    location: 'East US'
-    templateLocation: 'Linked artifact'
-    csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
-    csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
-    overrideParameters: ' -siteName $(siteName) -administratorLogin $(adminUser) -administratorLoginPassword $(ARM_PASS)'
-    deploymentMode: 'Incremental'
+# - task: AzureResourceManagerTemplateDeployment@3
+#   inputs:
+#     deploymentScope: 'Resource Group'
+#     azureResourceManagerConnection: '$(connection)'
+#     subscriptionId: '$(subscriptionID)'
+#     action: 'Create Or Update Resource Group'
+#     resourceGroupName: '$(resourceGroupName)'
+#     location: 'East US'
+#     templateLocation: 'Linked artifact'
+#     csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
+#     csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
+#     overrideParameters: ' -siteName $(siteName) -administratorLogin $(adminUser) -administratorLoginPassword $(ARM_PASS)'
+#     deploymentMode: 'Incremental'
     
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
