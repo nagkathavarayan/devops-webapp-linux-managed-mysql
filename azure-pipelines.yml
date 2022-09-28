@@ -33,6 +33,15 @@ steps:
 #     overrideParameters: ' -siteName $(siteName) -administratorLogin $(adminUser) -administratorLoginPassword $(ARM_PASS)'
 #     deploymentMode: 'Incremental'
     
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: '$(connection)'
+    subscriptionId: '$(subscriptionID)'
+    action: 'DeleteRG'
+    resourceGroupName: '$(resourceGroupName)'
+    location: 'East US'
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
  
