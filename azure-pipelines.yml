@@ -25,6 +25,7 @@ steps:
     azureResourceManagerConnection: 'Azure subscription 1 (6a86a86d-6186-4a3d-bdae-eb5f80e6c35e)'
     subscriptionId: '6a86a86d-6186-4a3d-bdae-eb5f80e6c35e'
     action: 'Create Or Update Resource Group'
+    addSpnToEnvironment: '$(resourceGroupName)'
     location: 'East US'
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
