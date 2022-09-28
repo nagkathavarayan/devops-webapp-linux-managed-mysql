@@ -22,10 +22,10 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Azure subscription 1 (6a86a86d-6186-4a3d-bdae-eb5f80e6c35e)'
-    subscriptionId: '6a86a86d-6186-4a3d-bdae-eb5f80e6c35e'
+    azureResourceManagerConnection: '$(connection)'
+    subscriptionId: '$(subscriptionID)'
     action: 'Create Or Update Resource Group'
-    addSpnToEnvironment: '$(resourceGroupName)'
+    resourceGroupName: '$(resourceGroupName)'
     location: 'East US'
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
