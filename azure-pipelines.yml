@@ -15,7 +15,7 @@ pool:
 steps:
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'nagkathavarayan/devops-webapp-linux-managed-mysql'
+    SourceFolder: 'quickstarts/microsoft.web/webapp-linux-managed-mysql/'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
